@@ -1,79 +1,88 @@
-# SIDesaLite: Sistem Informasi Administrasi Surat Desa Sederhana
+# Final Proyek Pemrograman Berorientasi Objek 2
+<ul>
+    <li>Mata Kuliah: Pemrograman Berorientasi Objek 2</li>
+    <li>Dosen Pengampu: <a href="https://github.com/Muhammad-Ikhwan-Fathulloh">Muhammad Ikhwan Fathulloh</a></li>
+</ul>
 
 ---
 
-## Latar Belakang
-
-Banyak desa di Indonesia masih mengandalkan cara manual untuk pencatatan data penduduk dan pembuatan surat keterangan. Hal ini sering kali memicu berbagai masalah seperti **keterlambatan proses**, **kesalahan input data**, dan **kesulitan dalam pengarsipan dokumen**.
-
-Untuk mengatasi tantangan tersebut, diperlukan sebuah sistem informasi sederhana yang dapat membantu petugas desa dalam mengelola data dan memproses surat dengan lebih efisien. **SIDesaLite** hadir sebagai solusi sederhana berbasis desktop, dirancang khusus untuk memenuhi kebutuhan administrasi dasar di kantor desa, menjadikan pengelolaan data dan surat lebih terstruktur dan modern.
-
----
-
-## Ide Sistem
-
-### Nama Sistem: SIDesaLite (Sistem Informasi Administrasi Surat Desa Sederhana)
-
-Sistem ini dibuat dengan menggunakan **JavaFX** sebagai GUI, **NetBeans** sebagai IDE utama, dan **MySQL (XAMPP)** sebagai database lokal.
-
-**Fungsi utama**nya adalah mengelola data penduduk dan mempermudah proses pembuatan serta pencetakan surat-surat keterangan yang dibutuhkan oleh warga desa.
+## Profil
+<ul>
+    <li>Nama: Azmi Syahri Ramadhan, Fahmi Fauziah Nur Fadillah, Salma Salamah</li>
+    <li>NIM: 23552011068, 23552011314, 23552011424</li>
+    <li>Studi Kasus: Sistem Informasi Pengajuan dan Pengelolaan Surat Desa (SIDESALITE)</li>
+</ul>
 
 ---
 
-## Alur Sistem
-
-Sistem SIDesaLite dirancang dengan alur yang intuitif untuk mempermudah petugas desa dalam menjalankan tugas sehari-hari:
-
-1.  Petugas membuka aplikasi.
-2.  Petugas mengelola data penduduk (menambah/mengedit data).
-3.  Penduduk datang untuk meminta surat.
-4.  Petugas memilih penduduk dan jenis surat.
-5.  Surat dicetak dan permintaan tersimpan di database.
-6.  Petugas bisa melihat laporan surat yang telah dibuat.
+## Judul Studi Kasus
+<p>Sistem Informasi Pengajuan dan Pengelolaan Surat Desa (SIDESALITE)</p>
 
 ---
 
-## Aktor pada Sistem
-
-* **Petugas Desa:** Merupakan aktor utama yang memiliki akses penuh ke seluruh fitur sistem. Ini termasuk kemampuan untuk menginput dan mengelola data penduduk, membuat dan mencetak surat keterangan, serta melihat laporan riwayat pembuatan surat.
+## Penjelasan Studi Kasus
+<p>SIDESALITE adalah sistem informasi berbasis database yang dirancang untuk memfasilitasi proses pengajuan, pengelolaan, dan penerbitan surat resmi di tingkat desa. Tujuan utama sistem ini adalah untuk menggantikan proses manual menjadi lebih terstruktur dan efisien secara digital. Dalam sistem ini terdapat dua jenis pengguna utama:
+    <ul>
+        <li><b>Penduduk</b>: dapat melakukan login, mengisi data diri, dan mengajukan permohonan surat seperti Surat Keterangan Usaha.</li>
+        <li><b>Petugas</b>: bertugas memverifikasi, memproses, dan menerbitkan surat yang diajukan oleh penduduk. Petugas juga dapat memberikan catatan pada proses permohonan.</li>
+    </ul>
+    Fitur utama sistem:
+    <br>
+    <b>Aktor 1: Petugas Desa</b>
+    <ul>
+        <li>Login</li>
+        <li>Manajemen Data Penduduk (Tambah/Edit/Hapus/Lihat data penduduk)</li>
+        <li>Manajemen Akun Penduduk (Tambah/Edit User login)</li>
+        <li>Verifikasi Permohonan Surat</li>
+        <li>Pencetakan Surat</li>
+        <li>Manajemen Jenis Surat (Tambah/Edit jenis surat yang tersedia, e.g., Domisili, Tidak Mampu)</li>
+    </ul>
+    <b>Aktor 2: Penduduk (Warga)</b>
+    <ul>
+        <li>Login</li>
+        <li>Ajukan Permohonan Surat (Pilih jenis surat, isi keperluan)</li>
+        <li>Lihat Status Permohonan (Menunggu/verifikasi/sukses)</li>
+    </ul>
+    Struktur data disimpan dalam database MySQL dengan relasi antar tabel seperti: <b>users</b>, <b>penduduk</b>, <b>jenis_surat</b>, <b>permohonan_surat</b>, dan <b>surat</b>.
+    <br>
+    Contoh alur kerja:
+    <ol>
+        <li>Petugas membuka aplikasi & login.</li>
+        <li>Petugas mengelola akun Penduduk:
+            <ul>
+                <li>Buat akun login untuk penduduk (User).</li>
+                <li>Input data pribadi penduduk.</li>
+            </ul>
+        </li>
+        <li>Penduduk login ke aplikasi (pakai username & password yang dibuat petugas).</li>
+        <li>Penduduk mengajukan permohonan surat melalui form yang tersedia.</li>
+        <li>Petugas memverifikasi permohonan surat.</li>
+        <li>Petugas mencetak surat yang sudah diverifikasi.</li>
+        <li>Semua surat dan permohonan tersimpan di database.</li>
+        <li>Petugas dapat melihat laporan surat yang sudah dicetak.</li>
+    </ol>
+</p>
 
 ---
 
-## Rencana Fitur
+## Penjelasan 4 Pilar OOP dalam Studi Kasus
 
-SIDesaLite akan dilengkapi dengan fitur-fitur penting untuk mendukung administrasi desa yang efisien:
+### 1. Inheritance
+<p>Sistem ini mengimplementasikan pewarisan melalui konsep role pengguna. Terdapat class dasar <b>User</b> yang memiliki atribut umum seperti username, password, dan role. Class ini diturunkan menjadi <b>Penduduk</b> dan <b>Petugas</b> yang memiliki fungsi tambahan sesuai tanggung jawab masing-masing. Misalnya, Penduduk memiliki kemampuan untuk mengajukan surat, sementara Petugas dapat memproses dan menerbitkan surat.</p>
 
-1.  **Manajemen Data Penduduk:**
-    * **Tambah Data:** Menambahkan informasi penduduk baru ke dalam sistem.
-    * **Edit Data:** Mengubah atau memperbarui data penduduk yang sudah ada.
-    * **Hapus Data:** Menghapus data penduduk yang tidak relevan atau duplikat.
-    * **Lihat Data:** Menampilkan daftar lengkap data penduduk yang tersimpan.
-2.  **Pembuatan Surat Keterangan:**
-    * Dukungan untuk berbagai jenis surat keterangan, seperti Surat Keterangan Domisili, Surat Keterangan Tidak Mampu, dan lainnya.
-3.  **Cetak Surat:**
-    * Fitur untuk mencetak surat dalam format siap *print* langsung dari aplikasi.
-4.  **Riwayat/Laporan Surat:**
-    * Menyediakan catatan atau laporan mengenai semua surat yang telah dibuat, memudahkan pelacakan dan audit.
-5.  **Fitur Pencarian Data Penduduk:**
-    * Memungkinkan pencarian data penduduk dengan cepat berdasarkan nama atau Nomor Induk Kependudukan (NIK).
+### 2. Encapsulation
+<p>Data penting seperti password, NIK, dan catatan permohonan dibatasi aksesnya. Setiap entitas memiliki akses terbatas terhadap data yang mereka miliki atau butuhkan. Hal ini menjaga keamanan data pengguna dan mencegah manipulasi yang tidak sah. Akses ke database dilakukan melalui metode yang ditentukan (misalnya, melalui form dan validasi sistem).</p>
+
+### 3. Polymorphism
+<p>Polimorfisme diterapkan melalui metode yang menyesuaikan perilaku tergantung pada role pengguna. Contoh: fungsi <code>tampilkanDataPermohonan()</code> menampilkan daftar seluruh permohonan untuk Petugas, namun hanya menampilkan permohonan milik sendiri jika diakses oleh Penduduk. Begitu juga untuk pengolahan data dan pembuatan surat, metode yang sama memiliki output yang berbeda tergantung pemanggilnya.</p>
+
+### 4. Abstraction
+<p>Sistem menyembunyikan kerumitan struktur database dari pengguna akhir. Pengguna tidak perlu mengetahui bagaimana data antar-tabel seperti users, penduduk, jenis_surat, permohonan_surat, dan surat saling terhubung melalui foreign key. Cukup dengan mengisi form permohonan atau klik tombol proses, semua logika sistem berjalan di belakang layar.</p>
 
 ---
 
-## Rencana Implementasi
-
-Pengembangan SIDesaLite akan dilakukan melalui beberapa tahap strategis untuk memastikan kualitas dan fungsionalitas sistem:
-
-1.  **Tahap 1: Riset dan Desain UI (JavaFX)**
-    * Fokus pada analisis kebutuhan pengguna dan perancangan antarmuka pengguna yang intuitif menggunakan JavaFX.
-2.  **Tahap 2: Pembuatan Database (MySQL - XAMPP)**
-    * Merancang skema *database* dan membangun *database* di MySQL menggunakan XAMPP untuk pengelolaan data.
-3.  **Tahap 3: Implementasi CRUD Data Penduduk**
-    * Mengembangkan modul untuk operasi *Create, Read, Update, Delete* (CRUD) pada data penduduk.
-4.  **Tahap 4: Modul Pembuatan dan Pencetakan Surat**
-    * Membangun fungsionalitas untuk membuat berbagai jenis surat dan mencetaknya.
-5.  **Tahap 5: Pembuatan Laporan Surat dan Pencarian**
-    * Mengembangkan modul pelaporan riwayat surat dan fitur pencarian data penduduk.
-6.  **Tahap 6: Pengujian dan Debugging**
-    * Melakukan pengujian menyeluruh untuk mengidentifikasi dan memperbaiki *bug* atau kesalahan dalam sistem.
-7.  **Tahap 7: Penyusunan Dokumentasi dan Finalisasi**
-    * Menyusun dokumentasi teknis dan panduan pengguna, serta melakukan finalisasi proyek sebelum *deployment*.
+## Demo Proyek
+<ul>
+    <li>Github: <a href="https://github.com/your-username/your-repo-name">Github</a></li>
+    <li>Youtube: <a href="Link_Video_Youtube_Anda">Youtube</a></li>
+</ul>
