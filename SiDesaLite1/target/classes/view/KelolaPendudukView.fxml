@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<BorderPane prefHeight="700.0" prefWidth="1200.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sidesalite1.app.controller.KelolaPendudukController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="20.0" styleClass="top-bar" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="header-label" text="Manajemen Data Penduduk">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button onAction="#handleKembali" styleClass="secondary-button" text="Kembali ke Dashboard" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="sub-header-label" text="Daftar Penduduk">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TableView fx:id="pendudukTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="nikColumn" prefWidth="100.0" text="NIK" />
+                      <TableColumn fx:id="namaColumn" prefWidth="150.0" text="Nama" />
+                        <TableColumn fx:id="tempatLahirColumn" prefWidth="100.0" text="Tempat Lahir" />
+                        <TableColumn fx:id="tanggalLahirColumn" prefWidth="120.0" text="Tanggal Lahir" />
+                        <TableColumn fx:id="jenisKelaminColumn" prefWidth="100.0" text="Jenis Kelamin" />
+                        <TableColumn fx:id="alamatColumn" prefWidth="150.0" text="Alamat" />
+                        <TableColumn fx:id="teleponColumn" prefWidth="100.0" text="Telepon" />
+                        <TableColumn fx:id="emailColumn" prefWidth="150.0" text="Email" />
+                        <TableColumn fx:id="userIdColumn" prefWidth="80.0" text="User ID" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefWidth="400.0">
+               <children>
+                  <Label styleClass="sub-header-label" text="Detail Penduduk">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="120.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="250.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="NIK:" />
+                        <TextField fx:id="nikField" GridPane.columnIndex="1" />
+                        <Label text="Nama:" GridPane.rowIndex="1" />
+                        <TextField fx:id="namaField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Tempat Lahir:" GridPane.rowIndex="2" />
+                        <TextField fx:id="tempatLahirField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Tanggal Lahir:" GridPane.rowIndex="3" />
+                        <DatePicker fx:id="tanggalLahirPicker" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Jenis Kelamin:" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="jenisKelaminComboBox" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Alamat:" GridPane.rowIndex="5" />
+                        <TextArea fx:id="alamatField" prefHeight="50.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Telepon:" GridPane.rowIndex="6" />
+                        <TextField fx:id="teleponField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="Email:" GridPane.rowIndex="7" />
+                        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button onAction="#handleTambah" styleClass="primary-button" text="Tambah" />
+                        <Button onAction="#handleUpdate" styleClass="info-button" text="Update" />
+                        <Button onAction="#handleHapus" styleClass="danger-button" text="Hapus" />
+                        <Button onAction="#handleClearFields" styleClass="secondary-button" text="Clear" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="buatAkunButton" onAction="#handleBuatAkun" styleClass="success-button" text="Buat Akun Login" />
+                        <Button fx:id="hapusAkunButton" onAction="#handleHapusAkun" styleClass="danger-button" text="Hapus Akun Login" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane prefHeight="500.0" prefWidth="800.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sidesalite1.app.controller.PetugasDashboardController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="20.0" styleClass="top-bar" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="header-label" text="Dashboard Petugas/Admin">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button onAction="#handleLogout" styleClass="danger-button" text="Logout" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="sub-header-label" text="Selamat Datang, Petugas!" />
+            <Button onAction="#handleKelolaPenduduk" styleClass="action-button" text="Kelola Data Penduduk" />
+            <Button onAction="#handleKelolaPermohonan" styleClass="action-button" text="Kelola Permohonan Surat" />
+            <Button onAction="#handleKelolaSurat" styleClass="action-button" text="Kelola Surat Diterbitkan" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
